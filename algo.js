@@ -7,3 +7,11 @@ export default class Stack {
     // with prepend/deleteHead operations of LinkedList.
     this.linkedList = new LinkedList();
   }
+
+  /**
+   * @return {boolean}
+   */
+  isEmpty() {
+    // The stack is empty if its linked list doesn't have a head.
+    return !this.linkedList.head;
+  }
