@@ -99,3 +99,15 @@ export default class Heap {
     this.heapContainer[indexTwo] = this.heapContainer[indexOne];
     this.heapContainer[indexOne] = tmp;
   }
+
+  /**
+   * @return {*}
+   */
+  peek() {
+    if (this.heapContainer.length === 0) {
+      return null;
+    }
+
+    return this.heapContainer[0];
+  }
+
