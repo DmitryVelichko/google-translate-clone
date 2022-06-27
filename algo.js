@@ -163,3 +163,22 @@ export default class Heap {
       } else {
         // Move last element in heap to the vacant (removed) position.
         this.heapContainer[indexToRemove] = this.heapContainer.pop();
+
+        // Get parent.
+        const parentItem = this.parent(indexToRemove);
+
+        // If there is no parent or parent is in correct order with the node
+        // we're going to delete then heapify down. Otherwise heapify up.
+        if (
+          this.hasLeftChild(indexToRemove)
+          && (
+            !parentItem
+            || this.pairIsInCorrectOrder(parentItem, this.heapContainer[indexToRemove])
+          )
+        ) {
+          this.heapifyDown(indexToRemove);
+        } else {
+          this.heapifyUp(indexToRemove);
+        }
+      }
+    }
