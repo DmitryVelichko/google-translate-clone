@@ -18,3 +18,5 @@ export default class Sort {
    * @param {SorterCallbacks} originalCallbacks
    * @returns {SorterCallbacks}
    */
+  static initSortingCallbacks(originalCallbacks) {
+    const callbacks = originalCallbacks || {};
