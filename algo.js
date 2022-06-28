@@ -11,3 +11,5 @@ import Comparator from '../../utils/comparator/Comparator';
 export default class Sort {
   constructor(originalCallbacks) {
     this.callbacks = Sort.initSortingCallbacks(originalCallbacks);
+    this.comparator = new Comparator(this.callbacks.compareCallback);
+  }
