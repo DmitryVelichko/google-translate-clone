@@ -23,3 +23,4 @@ export default class Sort {
     const stubCallback = () => {};
 
     callbacks.compareCallback = callbacks.compareCallback || undefined;
+    callbacks.visitingCallback = callbacks.visitingCallback || stubCallback;
