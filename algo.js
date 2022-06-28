@@ -27,3 +27,8 @@ export default class Sort {
 
     return callbacks;
   }
+
+  sort() {
+    throw new Error('sort method must be implemented');
+  }
+}
