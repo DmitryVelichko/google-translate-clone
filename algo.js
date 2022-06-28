@@ -13,3 +13,8 @@ export default class Sort {
     this.callbacks = Sort.initSortingCallbacks(originalCallbacks);
     this.comparator = new Comparator(this.callbacks.compareCallback);
   }
+
+  /**
+   * @param {SorterCallbacks} originalCallbacks
+   * @returns {SorterCallbacks}
+   */
