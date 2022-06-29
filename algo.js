@@ -13,3 +13,7 @@ export default class GraphEdge {
   /**
    * @return {string}
    */
+  getKey() {
+    const startVertexKey = this.startVertex.getKey();
+    const endVertexKey = this.endVertex.getKey();
+
