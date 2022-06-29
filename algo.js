@@ -17,3 +17,29 @@ export default class GraphVertex {
       if (edgeA.getKey() === edgeB.getKey()) {
         return 0;
       }
+
+      return edgeA.getKey() < edgeB.getKey() ? -1 : 1;
+    };
+
+    // Normally you would store string value like vertex name.
+    // But generally it may be any object as well
+    this.value = value;
+    this.edges = new LinkedList(edgeComparator);
+  }
+
+  /**
+   * @param {GraphEdge} edge
+   * @returns {GraphVertex}
+   */
+  addEdge(edge) {
+    this.edges.append(edge);
+
+    return this;
+  }
+
+  /**
+   * @param {GraphEdge} edge
+   */
+  deleteEdge(edge) {
+    this.edges.delete(edge);
+  }
