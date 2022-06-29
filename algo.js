@@ -23,3 +23,5 @@ export default class GraphEdge {
   /**
    * @return {GraphEdge}
    */
+  reverse() {
+    const tmp = this.startVertex;
