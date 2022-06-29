@@ -1,40 +1,10 @@
-export default class GraphEdge {
+import LinkedList from '../linked-list/LinkedList';
+
+export default class GraphVertex {
   /**
-   * @param {GraphVertex} startVertex
-   * @param {GraphVertex} endVertex
-   * @param {number} [weight=1]
+   * @param {*} value
    */
-  constructor(startVertex, endVertex, weight = 0) {
-    this.startVertex = startVertex;
-    this.endVertex = endVertex;
-    this.weight = weight;
-  }
-
-  /**
-   * @return {string}
-   */
-  getKey() {
-    const startVertexKey = this.startVertex.getKey();
-    const endVertexKey = this.endVertex.getKey();
-
-    return `${startVertexKey}_${endVertexKey}`;
-  }
-
-  /**
-   * @return {GraphEdge}
-   */
-  reverse() {
-    const tmp = this.startVertex;
-    this.startVertex = this.endVertex;
-    this.endVertex = tmp;
-
-    return this;
-  }
-
-  /**
-   * @return {string}
-   */
-  toString() {
-    return this.getKey();
-  }
-}
+  constructor(value) {
+    if (value === undefined) {
+      throw new Error('Graph vertex must have a value');
+    }
