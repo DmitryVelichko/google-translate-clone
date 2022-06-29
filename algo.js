@@ -19,3 +19,7 @@ export default class GraphEdge {
 
     return `${startVertexKey}_${endVertexKey}`;
   }
+
+  /**
+   * @return {GraphEdge}
+   */
