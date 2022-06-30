@@ -37,3 +37,8 @@ const generateKeyMatrix = (keyString) => {
  * @param {string} message - the message to encrypt.
  * @return {number[][]} messageVector
  */
+const generateMessageVector = (message) => {
+  return mtrx.generate(
+    [message.length, 1],
+    // Callback to get a value of each matrix cell.
+    // The order the matrix is being filled in is from left to right, from top to bottom.
