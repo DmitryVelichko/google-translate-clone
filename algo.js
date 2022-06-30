@@ -48,3 +48,11 @@ const generateMessageVector = (message) => {
     },
   );
 };
+
+/**
+ * Encrypts the given message using Hill Cipher.
+ *
+ * @param {string} message plaintext
+ * @param {string} keyString
+ * @return {string} cipherString
+ */
