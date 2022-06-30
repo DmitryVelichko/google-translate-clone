@@ -23,3 +23,10 @@ const generateKeyMatrix = (keyString) => {
     // Callback to get a value of each matrix cell.
     // The order the matrix is being filled in is from left to right, from top to bottom.
     () => {
+      // A → 0, B → 1, ..., a → 32, b → 33, ...
+      const charCodeShifted = (keyString.codePointAt(keyStringIndex)) % alphabetCodeShift;
+      keyStringIndex += 1;
+      return charCodeShifted;
+    },
+  );
+};
