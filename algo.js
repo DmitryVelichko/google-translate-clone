@@ -56,3 +56,12 @@ const generateMessageVector = (message) => {
  * @param {string} keyString
  * @return {string} cipherString
  */
+export function hillCipherEncrypt(message, keyString) {
+  // The keyString and message can only contain letters.
+  const onlyLettersRegExp = /^[a-zA-Z]+$/;
+  if (!onlyLettersRegExp.test(message) || !onlyLettersRegExp.test(keyString)) {
+    throw new Error('The message and key string can only contain letters');
+  }
+
+  const keyMatrix = generateKeyMatrix(keyString);
+  const messageVector = generateMessageVector(message);
