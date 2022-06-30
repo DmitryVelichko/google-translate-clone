@@ -42,3 +42,9 @@ const generateMessageVector = (message) => {
     [message.length, 1],
     // Callback to get a value of each matrix cell.
     // The order the matrix is being filled in is from left to right, from top to bottom.
+    (cellIndices) => {
+      const rowIndex = cellIndices[0];
+      return message.codePointAt(rowIndex) % alphabetCodeShift;
+    },
+  );
+};
