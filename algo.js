@@ -65,3 +65,19 @@ export function hillCipherEncrypt(message, keyString) {
 
   const keyMatrix = generateKeyMatrix(keyString);
   const messageVector = generateMessageVector(message);
+
+  // keyString.length must equal to square of message.length
+  if (keyMatrix.length !== message.length) {
+    throw new Error('Invalid key string length. The key length must be a square of message length');
+  }
+
+  const cipherVector = mtrx.dot(keyMatrix, messageVector);
+  let cipherString = '';
+  for (let row = 0; row < cipherVector.length; row += 1) {
+    const item = cipherVector[row];
+    cipherString += String.fromCharCode((item % englishAlphabetSize) + alphabetCodeShift);
+  }
+
+  return cipherString;
+}
+
