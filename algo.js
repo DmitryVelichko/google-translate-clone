@@ -17,3 +17,9 @@ const generateKeyMatrix = (keyString) => {
       'Invalid key string length. The square root of the key string must be an integer',
     );
   }
+  let keyStringIndex = 0;
+  return mtrx.generate(
+    [matrixSize, matrixSize],
+    // Callback to get a value of each matrix cell.
+    // The order the matrix is being filled in is from left to right, from top to bottom.
+    () => {
