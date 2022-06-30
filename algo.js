@@ -30,3 +30,10 @@ const generateKeyMatrix = (keyString) => {
     },
   );
 };
+
+/**
+ * Generates a message vector from a given message.
+ *
+ * @param {string} message - the message to encrypt.
+ * @return {number[][]} messageVector
+ */
