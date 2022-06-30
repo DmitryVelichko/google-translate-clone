@@ -81,3 +81,7 @@ export function hillCipherEncrypt(message, keyString) {
   return cipherString;
 }
 
+// @TODO: Implement this method.
+export const hillCipherDecrypt = () => {
+  throw new Error('This method is not implemented yet');
+};
