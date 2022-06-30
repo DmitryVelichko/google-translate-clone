@@ -10,3 +10,10 @@ const englishAlphabetSize = 26;
  * @param {string} keyString - a string to build a key matrix (must be of matrixSize^2 length).
  * @return {number[][]} keyMatrix
  */
+const generateKeyMatrix = (keyString) => {
+  const matrixSize = Math.sqrt(keyString.length);
+  if (!Number.isInteger(matrixSize)) {
+    throw new Error(
+      'Invalid key string length. The square root of the key string must be an integer',
+    );
+  }
