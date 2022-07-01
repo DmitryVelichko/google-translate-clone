@@ -50,3 +50,6 @@ export default class DisjointSet {
    * @param {*} valueB
    * @return {DisjointSet}
    */
+  union(valueA, valueB) {
+    const rootKeyA = this.find(valueA);
+    const rootKeyB = this.find(valueB);
