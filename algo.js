@@ -8,3 +8,10 @@ export default class DisjointSet {
     this.keyCallback = keyCallback;
     this.items = {};
   }
+
+  /**
+   * @param {*} itemValue
+   * @return {DisjointSet}
+   */
+  makeSet(itemValue) {
+    const disjointSetItem = new DisjointSetItem(itemValue, this.keyCallback);
