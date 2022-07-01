@@ -35,3 +35,10 @@ export default class DisjointSet {
 
     // Try to find item itself;
     const requiredDisjointItem = this.items[templateDisjointItem.getKey()];
+
+    if (!requiredDisjointItem) {
+      return null;
+    }
+
+    return requiredDisjointItem.getRoot().getKey();
+  }
