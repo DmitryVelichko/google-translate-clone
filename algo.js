@@ -62,3 +62,6 @@ export default class DisjointSet {
       // In case if both elements are already in the same set then just return its key.
       return this;
     }
+
+    const rootA = this.items[rootKeyA];
+    const rootB = this.items[rootKeyB];
