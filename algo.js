@@ -65,3 +65,10 @@ export default class DisjointSet {
 
     const rootA = this.items[rootKeyA];
     const rootB = this.items[rootKeyB];
+
+    if (rootA.getRank() < rootB.getRank()) {
+      // If rootB's tree is bigger then make rootB to be a new root.
+      rootB.addChild(rootA);
+
+      return this;
+    }
