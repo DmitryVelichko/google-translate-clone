@@ -23,3 +23,10 @@ export default class DisjointSet {
 
     return this;
   }
+
+  /**
+   * Find set representation node.
+   *
+   * @param {*} itemValue
+   * @return {(string|null)}
+   */
