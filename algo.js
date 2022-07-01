@@ -53,3 +53,7 @@ export default class DisjointSet {
   union(valueA, valueB) {
     const rootKeyA = this.find(valueA);
     const rootKeyB = this.find(valueB);
+
+    if (rootKeyA === null || rootKeyB === null) {
+      throw new Error('One or two values are not in sets');
+    }
