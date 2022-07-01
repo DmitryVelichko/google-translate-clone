@@ -72,3 +72,9 @@ export default class DisjointSet {
 
       return this;
     }
+
+    // If rootA's tree is bigger then make rootA to be a new root.
+    rootA.addChild(rootB);
+
+    return this;
+  }
