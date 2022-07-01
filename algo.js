@@ -57,3 +57,8 @@ export default class DisjointSet {
     if (rootKeyA === null || rootKeyB === null) {
       throw new Error('One or two values are not in sets');
     }
+
+    if (rootKeyA === rootKeyB) {
+      // In case if both elements are already in the same set then just return its key.
+      return this;
+    }
