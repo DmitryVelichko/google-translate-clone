@@ -15,3 +15,11 @@ export default class DisjointSet {
    */
   makeSet(itemValue) {
     const disjointSetItem = new DisjointSetItem(itemValue, this.keyCallback);
+
+    if (!this.items[disjointSetItem.getKey()]) {
+      // Add new item only in case if it not presented yet.
+      this.items[disjointSetItem.getKey()] = disjointSetItem;
+    }
+
+    return this;
+  }
