@@ -42,3 +42,11 @@ export default class DisjointSet {
 
     return requiredDisjointItem.getRoot().getKey();
   }
+
+  /**
+   * Union by rank.
+   *
+   * @param {*} valueA
+   * @param {*} valueB
+   * @return {DisjointSet}
+   */
