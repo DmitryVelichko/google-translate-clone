@@ -16,3 +16,6 @@ export default function jumpSearch(sortedArray, seekElement, comparatorCallback)
     // We can't find anything in empty array.
     return -1;
   }
+
+  // Calculate optimal jump size.
+  // Total number of comparisons in the worst case will be ((arraySize/jumpSize) + jumpSize - 1).
