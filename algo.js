@@ -30,3 +30,8 @@
         distanceMatrix[j - 1][i] + 1, // insertion
         distanceMatrix[j - 1][i - 1] + indicator, // substitution
       );
+    }
+  }
+
+  return distanceMatrix[b.length][a.length];
+}
