@@ -10,3 +10,7 @@
 
   // Fill the first row of the matrix.
   // If this is first row then we're transforming empty string to a.
+  // In this case the number of transformations equals to size of a substring.
+  for (let i = 0; i <= a.length; i += 1) {
+    distanceMatrix[0][i] = i;
+  }
