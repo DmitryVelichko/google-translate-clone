@@ -21,3 +21,6 @@
   for (let j = 0; j <= b.length; j += 1) {
     distanceMatrix[j][0] = j;
   }
+
+  for (let j = 1; j <= b.length; j += 1) {
+    for (let i = 1; i <= a.length; i += 1) {
