@@ -1,50 +1,57 @@
-import Comparator from '../../../utils/comparator/Comparator';
+/**
+ * @param {string} word
+ * @return {number[]}
+ */
+ function buildPatternTable(word) {
+  const patternTable = [0];
+  let prefixIndex = 0;
+  let suffixIndex = 1;
+
+  while (suffixIndex < word.length) {
+    if (word[prefixIndex] === word[suffixIndex]) {
+      patternTable[suffixIndex] = prefixIndex + 1;
+      suffixIndex += 1;
+      prefixIndex += 1;
+    } else if (prefixIndex === 0) {
+      patternTable[suffixIndex] = 0;
+      suffixIndex += 1;
+    } else {
+      prefixIndex = patternTable[prefixIndex - 1];
+    }
+  }
+
+  return patternTable;
+}
 
 /**
- * Jump (block) search implementation.
- *
- * @param {*[]} sortedArray
- * @param {*} seekElement
- * @param {function(a, b)} [comparatorCallback]
+ * @param {string} text
+ * @param {string} word
  * @return {number}
  */
-export default function jumpSearch(sortedArray, seekElement, comparatorCallback) {
-  const comparator = new Comparator(comparatorCallback);
-  const arraySize = sortedArray.length;
-
-  if (!arraySize) {
-    // We can't find anything in empty array.
-    return -1;
+export default function knuthMorrisPratt(text, word) {
+  if (word.length === 0) {
+    return 0;
   }
 
-  // Calculate optimal jump size.
-  // Total number of comparisons in the worst case will be ((arraySize/jumpSize) + jumpSize - 1).
-  // The value of the function ((arraySize/jumpSize) + jumpSize - 1) will be minimum
-  // when jumpSize = √array.length.
-  const jumpSize = Math.floor(Math.sqrt(arraySize));
+  let textIndex = 0;
+  let wordIndex = 0;
 
-  // Find the block where the seekElement belong to.
-  let blockStart = 0;
-  let blockEnd = jumpSize;
-  while (comparator.greaterThan(seekElement, sortedArray[Math.min(blockEnd, arraySize) - 1])) {
-    // Jump to the next block.
-    blockStart = blockEnd;
-    blockEnd += jumpSize;
+  const patternTable = buildPatternTable(word);
 
-    // If our next block is out of array then we couldn't found the element.
-    if (blockStart > arraySize) {
-      return -1;
+  while (textIndex < text.length) {
+    if (text[textIndex] === word[wordIndex]) {
+      // We've found a match.
+      if (wordIndex === word.length - 1) {
+        return (textIndex - word.length) + 1;
+      }
+      wordIndex += 1;
+      textIndex += 1;
+    } else if (wordIndex > 0) {
+      wordIndex = patternTable[wordIndex - 1];
+    } else {
+      // wordIndex = 0;
+      textIndex += 1;
     }
-  }
-
-  // Do linear search for seekElement in subarray starting from blockStart.
-  let currentIndex = blockStart;
-  while (currentIndex < Math.min(blockEnd, arraySize)) {
-    if (comparator.equal(sortedArray[currentIndex], seekElement)) {
-      return currentIndex;
-    }
-
-    currentIndex += 1;
   }
 
   return -1;
