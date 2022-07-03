@@ -14,3 +14,6 @@
   for (let i = 0; i <= a.length; i += 1) {
     distanceMatrix[0][i] = i;
   }
+
+  // Fill the first column of the matrix.
+  // If this is first column then we're transforming empty string to b.
