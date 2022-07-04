@@ -23,4 +23,18 @@ export default class GraphEdge {
   /**
    * @return {GraphEdge}
    */
-  
+  reverse() {
+    const tmp = this.startVertex;
+    this.startVertex = this.endVertex;
+    this.endVertex = tmp;
+
+    return this;
+  }
+
+  /**
+   * @return {string}
+   */
+  toString() {
+    return this.getKey();
+  }
+}
