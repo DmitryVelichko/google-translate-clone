@@ -15,3 +15,7 @@
  * @param {TraversalCallbacks} [callbacks] - The object that contains traversal callbacks.
  * @returns {TraversalCallbacks} - Traversal callbacks extended with defaults callbacks.
  */
+ function initCallbacks(callbacks = {}) {
+  // Init empty callbacks object.
+  const initiatedCallbacks = {};
+
