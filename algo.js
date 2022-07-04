@@ -22,3 +22,6 @@
   // Empty callback that we will use in case if user didn't provide real callback function.
   const stubCallback = () => {};
   // By default we will allow traversal of every node
+  // in case if user didn't provide a callback for that.
+  const defaultAllowTraversalCallback = () => true;
+
