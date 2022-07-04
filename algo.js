@@ -19,3 +19,6 @@
   // Init empty callbacks object.
   const initiatedCallbacks = {};
 
+  // Empty callback that we will use in case if user didn't provide real callback function.
+  const stubCallback = () => {};
+  // By default we will allow traversal of every node
