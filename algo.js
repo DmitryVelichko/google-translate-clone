@@ -25,3 +25,6 @@
   // in case if user didn't provide a callback for that.
   const defaultAllowTraversalCallback = () => true;
 
+  // Copy original callbacks to our initiatedCallbacks object or use default callbacks instead.
+  initiatedCallbacks.allowTraversal = callbacks.allowTraversal || defaultAllowTraversalCallback;
+  initiatedCallbacks.enterNode = callbacks.enterNode || stubCallback;
