@@ -13,3 +13,8 @@ export default class Stack {
     // The stack is empty if its linked list doesn't have a head.
     return !this.linkedList.head;
   }
+
+  /**
+   * @return {*}
+   */
+  peek() {
