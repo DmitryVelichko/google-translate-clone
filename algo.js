@@ -18,3 +18,7 @@ export default class Stack {
    * @return {*}
    */
   peek() {
+    if (this.isEmpty()) {
+      // If the linked list is empty then there is nothing to peek from.
+      return null;
+    }
