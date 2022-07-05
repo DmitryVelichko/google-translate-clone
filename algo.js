@@ -35,3 +35,13 @@ export default class Stack {
     // the new value at the start of the linked list.
     this.linkedList.prepend(value);
   }
+
+  /**
+   * @return {*}
+   */
+  pop() {
+    // Let's try to delete the first node (the head) from the linked list.
+    // If there is no head (the linked list is empty) just return null.
+    const removedHead = this.linkedList.deleteHead();
+    return removedHead ? removedHead.value : null;
+  }
