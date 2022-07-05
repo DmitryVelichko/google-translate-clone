@@ -22,3 +22,7 @@ export default class Stack {
       // If the linked list is empty then there is nothing to peek from.
       return null;
     }
+
+    // Just read the value from the start of linked list without deleting it.
+    return this.linkedList.head.value;
+  }
