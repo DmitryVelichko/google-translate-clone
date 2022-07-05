@@ -33,3 +33,5 @@ export default class Stack {
   push(value) {
     // Pushing means to lay the value on top of the stack. Therefore let's just add
     // the new value at the start of the linked list.
+    this.linkedList.prepend(value);
+  }
