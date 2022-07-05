@@ -45,3 +45,12 @@ export default class Stack {
     const removedHead = this.linkedList.deleteHead();
     return removedHead ? removedHead.value : null;
   }
+
+  /**
+   * @return {*[]}
+   */
+  toArray() {
+    return this.linkedList
+      .toArray()
+      .map((linkedListNode) => linkedListNode.value);
+  }
