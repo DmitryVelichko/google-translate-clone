@@ -29,4 +29,11 @@ function binarySearch(arr, i) {
   } else if (arr[mid] > i && arr.length > 1) {
       console.log('mid higher', arr[mid], i);
       binarySearch(arr.splice(0, mid), i);
- 
+  } else {
+      console.log('not here', i);
+      return -1;
+  }
+
+}
+var result = binarySearch(a, 100);
+console.log(result);
