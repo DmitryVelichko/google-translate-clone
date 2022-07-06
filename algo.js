@@ -27,3 +27,6 @@ function binarySearch(arr, i) {
       console.log('mid lower', arr[mid], i);
       binarySearch(arr.splice(mid, Number.MAX_VALUE), i);
   } else if (arr[mid] > i && arr.length > 1) {
+      console.log('mid higher', arr[mid], i);
+      binarySearch(arr.splice(0, mid), i);
+ 
