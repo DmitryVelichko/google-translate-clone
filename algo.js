@@ -22,3 +22,4 @@ function binarySearch(arr, i) {
 
   if (arr[mid] === i) {
       console.log('match', arr[mid], i);
+      return arr[mid];
