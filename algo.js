@@ -15,3 +15,6 @@ a.sort(function (a, b) {
 });
 
 console.log('a,', a);
+
+function binarySearch(arr, i) {
+  var mid = Math.floor(arr.length / 2);
