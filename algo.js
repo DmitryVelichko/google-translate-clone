@@ -23,3 +23,5 @@ function binarySearch(arr, i) {
   if (arr[mid] === i) {
       console.log('match', arr[mid], i);
       return arr[mid];
+  } else if (arr[mid] < i && arr.length > 1) {
+      console.log('mid lower', arr[mid], i);
