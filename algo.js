@@ -18,3 +18,4 @@ console.log('a,', a);
 
 function binarySearch(arr, i) {
   var mid = Math.floor(arr.length / 2);
+  console.log(arr[mid], i);
