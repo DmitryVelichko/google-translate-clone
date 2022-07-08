@@ -14,3 +14,5 @@ function binarySearchRecursive(arr, start, end, target) {
     return binarySearchRecursive(arr, midIndex + 1, end, target);
   }
 }
+
+console.log(binarySearchRecursive(arr, start, end, target));
