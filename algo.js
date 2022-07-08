@@ -6,4 +6,5 @@ let target = 4;
 
 function binarySearchRecursive(arr, start, end, target) {
   if(start > end) return false;
+  let midIndex = Math.floor((start + end) /2);
 }
