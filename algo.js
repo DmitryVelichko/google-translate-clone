@@ -9,6 +9,8 @@ function binarySearchRecursive(arr, start, end, target) {
   let midIndex = Math.floor((start + end) /2);
   if(arr[midIndex] === target) return true;
   if(arr[midIndex > target]) {
-    
+    return binarySearchRecursive(arr, start, midIndex - 1, target);
+  } else {
+    return binarySearchRecursive(arr, midIndex + 1, end, target);
   }
 }
