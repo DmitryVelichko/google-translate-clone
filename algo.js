@@ -5,5 +5,5 @@ let end = arr.length - 1;
 let target = 4;
 
 function binarySearchRecursive(arr, start, end, target) {
-  
+  if(start > end) return false;
 }
