@@ -12,4 +12,7 @@ const selectionSort = (arr) => {
     arr[i] = arr[indexMin];
     arr[indexMin] = tmp;
   }
+  return arr;
 };
+
+console.log(selectionSort(arr));
