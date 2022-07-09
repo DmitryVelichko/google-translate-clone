@@ -9,5 +9,6 @@ const selectionSort = (arr) => {
       }
     }
     let tmp = arr[i];
+    arr[i] = arr[indexMin];
   }
 };
