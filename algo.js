@@ -1,4 +1,6 @@
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 19];
+// Binary Search
+
+const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
 const binarySearch = (arr, value) => {
   let start = 0;
@@ -15,4 +17,4 @@ const binarySearch = (arr, value) => {
   }
   return -1;
 };
-console.log(selectionSort(arr, 7));
+console.log(binarySearch(arr, 11));
