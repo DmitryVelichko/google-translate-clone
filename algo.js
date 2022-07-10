@@ -1,18 +1,8 @@
-const arr = [1, 4, 6, 3, 5, 7, 32, 54, 42, 234];
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 19];
 
-const selectionSort = (arr) => {
+const binarySearch = (arr, value) => {
   for (let i = 0; i < arr.length; i++) {
-    let indexMin = i;
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] > arr[j]) {
-        indexMin = j;
-      }
-    }
-    let tmp = arr[i];
-    arr[i] = arr[indexMin];
-    arr[indexMin] = tmp;
+    
   }
-  return arr;
 };
-
-console.log(selectionSort(arr));
+console.log(selectionSort(arr, 7));
